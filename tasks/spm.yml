@@ -3,7 +3,7 @@
 
 # Install Collectd
 - name: Install Collectd
-  apt: pkg=collectd state=present
+  package: name=collectd state=present
 
 # Download package
 - name: Downloading and running package
