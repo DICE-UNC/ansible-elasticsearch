@@ -78,9 +78,7 @@
   notify: Restart Elasticsearch
 - lineinfile: dest=/etc/pam.d/su regexp='^session    required   pam_limits.so' insertafter=EOF line='session    required   pam_limits.so'
   notify: Restart Elasticsearch
-- lineinfile: dest=/etc/pam.d/common-session regexp='^session    required   pam_limits.so' insertafter=EOF line='session    required   pam_limits.so'
-  notify: Restart Elasticsearch
-- lineinfile: dest=/etc/pam.d/common-session-noninteractive regexp='^session    required   pam_limits.so' insertafter=EOF line='session    required   pam_limits.so'
+- lineinfile: dest=/etc/pam.d/system-auth regexp='^session    required   pam_limits.so' insertafter=EOF line='session    required   pam_limits.so'
   notify: Restart Elasticsearch
 - lineinfile: dest=/etc/pam.d/sudo regexp='^session    required   pam_limits.so' insertafter=EOF line='session    required   pam_limits.so'
   notify: Restart Elasticsearch
