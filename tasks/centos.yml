@@ -36,7 +36,7 @@
 
 # Download package if needed
 - name: Download Elasticsearch package
-  get_url: url={{ elasticsearch_download_url }}/elasticsearch-{{ elasticsearch_version }}.noarch.rpm dest=/tmp/elasticsearch-{{ elasticsearch_version }}.noarch.rpm mode=0440
+  get_url: url={{ elasticsearch_download_url }}/elasticsearch-{{ elasticsearch_version }}.noarch.rpm dest=/tmp/elasticsearch-{{ elasticsearch_version }}.noarch.rpm mode=0440 validate_certs=no
   when: version_exists.stdout == 'no'
 
 # Uninstall previous version if applicable
